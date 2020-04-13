@@ -3,6 +3,7 @@ import 'package:flutter_travel/pages/dart_pages/dart_datatype_page.dart';
 import 'package:flutter_travel/pages/dart_pages/dart_oop_page.dart';
 import 'package:flutter_travel/widgets/item_widget.dart';
 
+import 'dart_asyn_page.dart';
 import 'dart_generic_page.dart';
 
 class DartHomePage extends StatefulWidget {
@@ -39,6 +40,12 @@ class _DartHomePageState extends State<DartHomePage> {
                 Navigator.of(context)
                     .push(new MaterialPageRoute(builder: (context) {
                   return new DartGenericPage();
+                }));
+              }),
+              common_item(context, "Dart异步", () {
+                Navigator.of(context)
+                    .push(new MaterialPageRoute(builder: (context) {
+                  return new DartAsyncPage();
                 }));
               }),
             ],
