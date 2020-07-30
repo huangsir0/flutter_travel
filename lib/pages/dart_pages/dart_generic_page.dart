@@ -216,6 +216,7 @@ class Manager<T> implements IManager<T> {
 
 ///有时候你在实现类似通用接口的泛型中，期望的类型是某些特定类型时，这时可以使用类型约束
 class Member<T extends Person> {
+
   T _person;
 
   ///泛型作用：约束参数类型

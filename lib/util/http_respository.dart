@@ -1,5 +1,7 @@
+import 'dart:convert';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/services.dart';
 
 class DioFactory {
   static DioFactory get instance => _getInstance();
@@ -31,7 +33,6 @@ class DioFactory {
     return _instance;
   }
 
-
   /**
    * 新添加，只用于返回字符串，而不是map类型
    *
@@ -52,7 +53,16 @@ class DioFactory {
     //print(response.data.toString());
     return response == null ? "" : response.data.toString();
   }
-
+  ///本地获取信息
+  Future<dynamic> localGet(String url, {Map params}) async {
+    return mock(url: url, params: params);
+  }
+  ///本地配置信息
+  Future<dynamic> mock({String url, Map params}) async {
+    var responseStr = await rootBundle.loadString('assets/datas/$url.json');
+    var responseJson = json.decode(responseStr);
+    return responseJson;
+  }
 }
 
 class Config {

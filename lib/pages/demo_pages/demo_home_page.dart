@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_travel/pages/demo_pages/demo_biquge_page.dart';
+import 'package:flutter_travel/pages/demo_pages/demo_book_page.dart';
+import 'package:flutter_travel/pages/fluro/first_fluro_page.dart';
 import 'package:flutter_travel/widgets/item_widget.dart';
 
 class DemoHomePage extends StatefulWidget {
@@ -24,6 +26,20 @@ class _DemoHomePageState extends State<DemoHomePage> {
                 Navigator.of(context)
                     .push(new MaterialPageRoute(builder: (context) {
                   return new DemoBiqugePage();
+                }));
+              }),
+
+              common_item(context, "分页实现", () {
+                Navigator.of(context)
+                    .push(new MaterialPageRoute(builder: (context) {
+                  return new DemoBookPage();
+                }));
+              }),
+
+              common_item(context, "Fluro 路由框架", () {
+                Navigator.of(context)
+                    .push(new MaterialPageRoute(builder: (context) {
+                  return new FirstFluroPage();
                 }));
               }),
             ],

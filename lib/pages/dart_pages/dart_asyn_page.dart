@@ -120,7 +120,7 @@ class _DartAsyncPageState extends State<DartAsyncPage> {
     var completer = Completer();
     // 这里可以拿到这个completer内部的Future
     var future = completer.future;
-    future.then((_)=>print("then"));
+    future.then((_) => print("then"));
 
     //...someThing elses
     completer.complete("finished");
@@ -164,6 +164,7 @@ class _DartAsyncPageState extends State<DartAsyncPage> {
     String msg = "async---->string";
     return msg;
   }
+
 
   void handleError(e) {
     print(e);

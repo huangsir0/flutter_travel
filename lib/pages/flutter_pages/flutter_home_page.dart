@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_travel/pages/flutter_pages/animated_switcher_page.dart';
+import 'package:flutter_travel/pages/flutter_pages/painter_page_first.dart';
 import 'package:flutter_travel/pages/flutter_pages/shadermasks_page.dart';
+import 'package:flutter_travel/pages/flutter_pages/star_page.dart';
 import 'package:flutter_travel/widgets/item_widget.dart';
 
 import 'dialog_page.dart';
@@ -39,6 +42,24 @@ class _FlutterHomePageState extends State<FlutterHomePage> {
                 Navigator.of(context)
                     .push(new MaterialPageRoute(builder: (context) {
                   return new HeroPage();
+                }));
+              }),
+              common_item(context, "Painter一", () {
+                Navigator.of(context)
+                    .push(new MaterialPageRoute(builder: (context) {
+                  return new PainterPageFirst();
+                }));
+              }),
+              common_item(context, "StarWidget", () {
+                Navigator.of(context)
+                    .push(new MaterialPageRoute(builder: (context) {
+                  return new StarPage();
+                }));
+              }),
+              common_item(context, "AnimatedSwitcher", () {
+                Navigator.of(context)
+                    .push(new MaterialPageRoute(builder: (context) {
+                  return new AnimatedSwitcherPage();
                 }));
               }),
             ],
