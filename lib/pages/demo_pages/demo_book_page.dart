@@ -31,6 +31,7 @@ class _DemoBookPageState extends State<DemoBookPage> {
     return new TextSpan(text: text, style: _textStyle);
   }
 
+
   //接受内容
   //追加内容返回false
   //计算完毕返回true
@@ -66,7 +67,7 @@ class _DemoBookPageState extends State<DemoBookPage> {
     content = content ?? '';
     _textPainter
       ..text = getTextSpan(content)
-      ..layout(maxWidth: MediaQuery.of(context).size.width - 20);
+      ..layout(maxWidth: MediaQuery.of(context).size.width);
     return !didExceed;
   }
 
@@ -75,16 +76,7 @@ class _DemoBookPageState extends State<DemoBookPage> {
     return _textPainter.didExceedMaxLines ||
         _textPainter.size.height >
             MediaQuery.of(context).size.height -
-                35 -
-                30 -
-                20 -
-                kToolbarHeight -
-                10 -
-                10 -
-                20 -
-                20 -
-                20 -
-                30;
+                kToolbarHeight ;
   }
 
   @override
@@ -92,6 +84,7 @@ class _DemoBookPageState extends State<DemoBookPage> {
     // TODO: implement initState
     super.initState();
     _textPainter = new TextPainter(textDirection: TextDirection.ltr);
+
     _textStyle = TextStyle(
         fontSize: contentFontSize,
         letterSpacing: contentSpace,
@@ -119,7 +112,6 @@ class _DemoBookPageState extends State<DemoBookPage> {
         duration: const Duration(milliseconds: 200),
         transitionBuilder: (Widget child, Animation<double> animation) {
           //执行缩放动画
-
           return SlideTransitionX(
             child: child,
             direction: AxisDirection.left, //上入下出
@@ -130,43 +122,12 @@ class _DemoBookPageState extends State<DemoBookPage> {
             key: ValueKey<String>(_content.substring(0, length)),
             child: Stack(
               children: <Widget>[
-                Column(
-                  children: <Widget>[
-                    Container(
-                      padding: EdgeInsets.only(
-                          left: 10, right: 10, top: 20, bottom: 30),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Container(
-                            alignment: Alignment.centerLeft,
-                            margin: EdgeInsets.only(top: 10, left: 0),
-                            child: Text(
-                              "元尊",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 18),
-                            ),
-                          ),
-                          Container(
-                            alignment: Alignment.centerLeft,
-                            margin: EdgeInsets.only(top: 10, left: 0),
-                            child: Text(
-                              "天蚕土豆",
-                              style: TextStyle(
-                                  fontSize: 14, fontWeight: FontWeight.w300),
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.only(top: 30),
-                            child: Text(
-                              _content.substring(0, length),
-                              style: _textStyle,
-                            ),
-                          )
-                        ],
-                      ),
-                    ),
-                  ],
+                Container(
+                  margin: EdgeInsets.only(top: 30),
+                  child: Text(
+                    _content.substring(0, length),
+                    style: _textStyle,
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -278,6 +239,7 @@ class SlideTransitionX extends AnimatedWidget {
           break;
       }
     }
+
     return FractionalTranslation(
       translation: offset,
       transformHitTests: transformHitTests,

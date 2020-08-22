@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_travel/pages/flutter_pages/animated_switcher_page.dart';
+import 'package:flutter_travel/pages/flutter_pages/hclswitcher_page.dart';
 import 'package:flutter_travel/pages/flutter_pages/painter_page_first.dart';
 import 'package:flutter_travel/pages/flutter_pages/shadermasks_page.dart';
 import 'package:flutter_travel/pages/flutter_pages/star_page.dart';
+import 'package:flutter_travel/widgets/hcl_switcher.dart';
 import 'package:flutter_travel/widgets/item_widget.dart';
 
 import 'dialog_page.dart';
 import 'hero_page.dart';
+import 'mutiple_textfield_page.dart';
 
 class FlutterHomePage extends StatefulWidget {
   @override
@@ -60,6 +63,18 @@ class _FlutterHomePageState extends State<FlutterHomePage> {
                 Navigator.of(context)
                     .push(new MaterialPageRoute(builder: (context) {
                   return new AnimatedSwitcherPage();
+                }));
+              }),
+              common_item(context, "CoustomerSwitcher", () {
+                Navigator.of(context)
+                    .push(new MaterialPageRoute(builder: (context) {
+                  return new HclSwitcherPage();
+                }));
+              }),
+              common_item(context, "MutipleTextFieldPage", () {
+                Navigator.of(context)
+                    .push(new MaterialPageRoute(builder: (context) {
+                  return new MutipleTextFieldPage();
                 }));
               }),
             ],

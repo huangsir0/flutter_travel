@@ -14,7 +14,7 @@ description: A new Flutter application.
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -28,6 +28,7 @@ dependencies:
   cached_network_image: ^2.0.0
   html: ^0.14.0+3
   fluro: ^1.6.3
+  intl: 0.16.1
 
 dev_dependencies:
   flutter_test:

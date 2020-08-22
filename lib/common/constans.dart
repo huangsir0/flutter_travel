@@ -10,3 +10,4 @@ class MyIcons {
   static const IconData demo = Icons.description;
 
 }
+

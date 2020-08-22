@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_travel/pages/demo_pages/demo_biquge_page.dart';
 import 'package:flutter_travel/pages/demo_pages/demo_book_page.dart';
-import 'package:flutter_travel/pages/fluro/first_fluro_page.dart';
+
 import 'package:flutter_travel/widgets/item_widget.dart';
+
+import 'fluro/first_fluro_page.dart';
 
 class DemoHomePage extends StatefulWidget {
   @override
