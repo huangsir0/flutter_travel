@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_travel/pages/flutter_pages/animated_switcher_page.dart';
+import 'package:flutter_travel/pages/flutter_pages/group_page.dart';
 import 'package:flutter_travel/pages/flutter_pages/hclswitcher_page.dart';
 import 'package:flutter_travel/pages/flutter_pages/painter_page_first.dart';
 import 'package:flutter_travel/pages/flutter_pages/shadermasks_page.dart';
@@ -75,6 +76,12 @@ class _FlutterHomePageState extends State<FlutterHomePage> {
                 Navigator.of(context)
                     .push(new MaterialPageRoute(builder: (context) {
                   return new MutipleTextFieldPage();
+                }));
+              }),
+              common_item(context, "QQ分组", () {
+                Navigator.of(context)
+                    .push(new MaterialPageRoute(builder: (context) {
+                  return new GroupPage();
                 }));
               }),
             ],
